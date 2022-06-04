@@ -21,8 +21,5 @@ urlpatterns = [
     path('', include('pages.urls')),
     
     # User management
-    path('accounts/', include('django.contrib.auth.urls')),
-    # Because URL paths are loaded top-to-bottom placing the auth path above the accounts path ensures that auth paths will be loaded first.
-    # And when the auth path can't resolve my login url, it'll search for it in the accounts url (where the custom login view resides)
-    path('accounts/', include('accounts.urls')),
+    path('accounts/', include('allauth.urls')),
 ]

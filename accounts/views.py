@@ -1,3 +1,4 @@
+# No longer used. Has been replaced with Django all-auth package
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.contrib.auth.views import LoginView
