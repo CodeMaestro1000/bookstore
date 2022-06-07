@@ -11,6 +11,14 @@ class Book(models.Model):
     price = models.DecimalField(max_digits=6, decimal_places=2)
     cover = models.ImageField(upload_to='covers/', blank=True)
 
+    class Meta: # The class Meta should appear after the fields are defined, with a single blank line separating the fields and the class definition.
+        permissions = [
+            ('special_status', 'Can read all books'),
+        ]
+        indexes = [ # new
+            models.Index(fields=['id'], name='id_index'),
+        ]
+
     def __str__(self):
         return self.title
 
